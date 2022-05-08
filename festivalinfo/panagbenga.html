@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panagbenga | FILNESTA</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jockey+One" />
+    <link href='https://fonts.googleapis.com/css?family=Jockey One' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="structure.css">
+    <link rel="stylesheet" type="text/css" href="pagetransition.css">
+    
+    <style>
+        body {
+            background: url('bg4.jpg');
+        }
+        
+        .title::before {
+            background-image: url("panagbengalogo.png");
+        }
+        
+        
+        .title::after {
+            background-image: url("RightArrow.png");
+        }
+    </style>
+</head>
+<body onload="getaccount()">
+    <div id="headerplace"></div>
+    
+    <div class="box">
+        <div class="title" onclick="window.location.href = 'kadayawan.html'" title="Go to Kadayawan festival?">Panagbenga Festival</div>
+        <div class="container">
+            <div class="info">
+                <img src="PANAGBENGA.jpg" alt="Dummy Image" id="festimg">
+                <div id="realinfo">
+                    <p>
+                        <div class="heading">Meaning:</div><br>
+                        The term “Panagbenga” comes from a Kankanaey term meaning “a season for blossoming, a time for flowering.” This Baguio festival reflects the history, traditions, and values of the city and the Cordillera.
+                    </p>
+                    <p>
+                        <div class="heading">Origin:</div><br>
+                        The Baguio Flower Festival started when lawyer, Damaso E. Bangaoet, Jr., John Hay Poro Point Development Corporation (JPDC) Managing Director for Camp John Hay, presented to the Board of Directors of JPDC the idea to lead the holding of a flower festival in Baguio. The Board, then led by the Bases Conversion Development Authority (BCDA) Chairman Victor A. Lim and JPDC President Rogelio L. Singson, approved the project immediately. It was also decided that the Festival will be held every February.
+                    </p>
+                    <p>
+                        <div class="heading">What to expect:</div><br>
+                        One of the most fun activities at Panagbenga Festival that many people look forward to is the Grand Street Parade. Here the locals and revelers parade through the streets of Baguio wearing the most colorful costumes and some traditional clothes of the tribes in the north. What's fun about this Panagbenga event is that you can't resist dancing! The dance groups who participated here compete for cash prizes.<br><br>
+                        
+                        Another most-awaited Panagbenga event is the Grand Float Parade. Tourists across the world really go to Baguio just to witness this world-class parade. You can see about more than 20 flower-covered floats going down Baguio's main streets, sponsored by companies and local city organizations.<br><br>
+                        
+                        To cap off the whole festival, Panagbenga officially closes with ceremonies at the Baguio Athletic Bowl near Burnham Park along with a stunning fireworks display.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="footerplace" style="position: absolute; width: 100%;"></div>
+
+    <script src="footer.js"></script>
+    <script src="account.js"></script>
+    <script src="header.js"></script>
+    <script>
+        function OME() {
+            const div = document.getElementById("formdiv");
+            div.animate([
+            {
+                transform: 'rotateX(0px) translateX(-50%) translateY(0px)'
+            },
+            {
+                transform: 'rotateX(30px) translateX(-50%) translateY(0px)'
+            }
+            ],
+            {
+                duration: 500
+            }
+            )
+            const onMouseEnter = setTimeout(OMEUse, 450);
+            function OMEUse() {
+                div.style.transform = 'rotateX(30px)';
+            }
+        }
+        
+        function OML() {
+            const div = document.getElementById("formdiv");
+            div.animate([
+            {
+                transform: 'rotateX(30px) translateX(-50%) translateY(0)'
+            },
+            {
+                transform: 'rotateX(30px) translateX(-50%) translateY(0)'
+            }
+            ],
+            {
+                duration: 500
+            }
+            )
+            const onMouseEnter = setTimeout(OMEUse, 450);
+            function OMEUse() {
+                div.style.transform = 'rotateX(0px)';
+            }
+        }
+    </script>
+</body>
+</html>

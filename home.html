@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage | FILNESTA</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jockey+One" />
+    <link href='https://fonts.googleapis.com/css?family=Jockey One' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="structure.css">
+    <link rel="stylesheet" type="text/css" href="pagetransition.css">
+    
+    <style>
+        body {
+            overflow-x: hidden;
+            margin: 0%;
+            font-family: "Jockey One";
+            background-color: beige;
+        }
+        
+        .header {
+            border: 0px;
+        }
+        
+        #List {
+            list-style-type: none;
+            padding: 10px;
+            margin: 0;
+            border-radius: 20px;
+            display:inline; 
+        }
+        
+        #List li {
+            display: inline;
+        }
+        
+        #List li a {
+            border: 1px solid #ddd;
+            background-color: #f6f6f6;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: inline-block;
+            border-radius: 100%;
+            width: 220px;
+            height: 220px;
+            text-align: center;
+            box-shadow: 
+            rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            transition: all 1s;
+        }
+        
+        #List li a:hover {
+            width: 240px;
+            height: 240px;
+            box-shadow: 2px 20px 24px -2px rgba(0,0,0,0.72);
+        }
+        
+        @media only screen and (max-width: 1100px) {
+            #List li a {
+                border: 1px solid #ddd;
+                background-color: #f6f6f6;
+                padding: 15px;
+                text-decoration: none;
+                font-size: 18px;
+                color: black;
+                display: inline-block;
+                border-radius: 100%;
+                width: 150px;
+                height: 150px;
+                text-align: center;
+                box-shadow: 
+                rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+                rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+                rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            }
+            
+            #List li a:hover {
+                width: 160px;
+                height: 160px;
+                box-shadow: 2px 20px 24px -2px rgba(0,0,0,0.72);
+            }
+        }
+        
+        @media only screen and (max-width: 900px) {
+            #List li a {
+                border: 1px solid #ddd;
+                background-color: #f6f6f6;
+                padding: 15px;
+                text-decoration: none;
+                font-size: 18px;
+                color: black;
+                display: inline-block;
+                border-radius: 100%;
+                width: 100px;
+                height: 100px;
+                text-align: center;
+                box-shadow: 
+                rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+                rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+                rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            }
+            
+            #List li a:hover {
+                width: 105px;
+                height: 105px;
+                box-shadow: 2px 20px 24px -2px rgba(0,0,0,0.72);
+            }
+        }
+        
+        
+        img {
+            width: 200px;
+            height: 200px;
+        }
+        
+        .producttype {
+            background-color: white;
+            width: 100px;
+            border: 0px solid black;
+            border-radius: 4px;
+            margin: 5px;
+        }
+        
+        .content {
+            width: 90%;
+            background-color: #b8d8d8;
+            opacity: 95%;
+            margin: 200px auto;
+            border-radius: 10px;
+            box-shadow: 
+            rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+        
+        #first {
+            animation: topA 3s ease;
+            background: url("atiatihanfest.jpg");
+            background-size: 100% 100%;
+            background-position: 0px 40px;
+            
+            background-repeat: no-repeat;
+        }
+        
+        #second {
+            animation: topB 3s ease;
+            background: url("masskarafest.webp");
+            background-size: 100% 100%;
+            background-position: 0px 40px;
+            
+            background-repeat: no-repeat;
+        }
+        
+        #third {
+            animation: topC 3s ease;
+            background: url("sinulogfest.jfif");
+            background-size: 100% 100%;
+            background-position: 0px 40px;
+            
+            background-repeat: no-repeat;
+        }
+        
+        #fourth {
+            animation: topD 3s ease;
+            background: url("dinagyangfest.JPG");
+            background-size: 100% 100%;
+            background-position: 0px 40px;
+            
+            background-repeat: no-repeat;
+        }
+        
+        #fifth {
+            animation: bottomA 3s ease;
+            background: url("pahiyasfest.webp");
+            background-size: 100% 100%;
+            background-position: 0px 40px;
+            
+            background-repeat: no-repeat;
+        }
+        
+        #sixth {
+            animation: bottomB 3s ease;
+            background: url("panagbengafest.jpg");
+            background-size: 100% 100%;
+            background-position: 0px 40px;
+            
+            background-repeat: no-repeat;
+        }
+        
+        #seventh {
+            animation: bottomC 3s ease;
+            background: url("kadayawanfest.jpg");
+            background-size: 100% 100%;
+            background-position: 0px 40px;
+            
+            background-repeat: no-repeat;
+        }
+        
+        @keyframes topA {
+            0% {
+                transform: translateX(210%) translateY(90%);
+            }
+            100% {
+                transform: translateX(0%) translateY(0%);
+            }
+        }
+        
+        @keyframes topB {
+            0% {
+                transform: translateX(70%) translateY(90%);
+            }
+            100% {
+                transform: translateX(0%) translateY(0%);
+            }
+        }
+        
+        @keyframes topC {
+            0% {
+                transform: translateX(-70%) translateY(90%);
+            }
+            100% {
+                transform: translateX(0%) translateY(0%);
+            }
+        }
+        
+        @keyframes topD {
+            0% {
+                transform: translateX(-210%) translateY(90%);
+            }
+            100% {
+                transform: translateX(0%) translateY(0%);
+            }
+        }
+        
+        @keyframes bottomA {
+            0% {
+                transform: translateX(170%) translateY(-105%);
+            }
+            100% {
+                transform: translateX(0%) translateY(0%);
+            }
+        }
+        
+        @keyframes bottomB {
+            0% {
+                transform: translateX(0%) translateY(-105%);
+            }
+            100% {
+                transform: translateX(0%) translateY(0%);
+            }
+        }
+        
+        @keyframes bottomC {
+            0% {
+                transform: translateX(-170%) translateY(-105%);
+            }
+            100% {
+                transform: translateX(0%) translateY(0%);
+            }
+        }
+    </style>
+</head>
+<div onload="getaccount()">
+    <div id="headerplace"></div>
+    
+    
+    <div class="content">
+        
+        <ul id="List">
+            <div style="display: flex; justify-content: space-around;">
+                <li>
+                    <a id="first" class="top" onclick="window.location.href = 'loading.html'; localStorage.setItem('page','festivalinfo/atiatihan.html');">Ati-Atihan Festival</a>
+                </li>
+                <li>
+                    <a id="second" class="top" onclick="window.location.href = 'loading.html'; localStorage.setItem('page','festivalinfo/masskara.html');">Masskara Festival</a>
+                </li>
+                <li>
+                    <a id="third" class="top" onclick="window.location.href = 'loading.html'; localStorage.setItem('page','festivalinfo/sinulog.html');">Sinulog Festival</a>
+                </li>
+                <li>
+                    <a id="fourth" class="top" onclick="window.location.href = 'loading.html'; localStorage.setItem('page','festivalinfo/dinagyang.html');">Dinagyang Festival</a>
+                </li>
+            </div>
+            <div style="text-align: center; font-size: 80px; width: 400px; margin: 0 auto;">Choose Your Festival</div>
+            
+            <div style="display: flex; justify-content: space-evenly;">
+                <li>
+                    <a id="fifth" class="bottom" onclick="window.location.href = 'loading.html'; localStorage.setItem('page','festivalinfo/pahiyas.html');">Pahiyas Festival</a>
+                </li>
+                <li>
+                    <a id="sixth" class="bottom" onclick="window.location.href = 'loading.html'; localStorage.setItem('page','festivalinfo/panagbenga.html');">Panagbenga Festival</a>
+                </li>
+                <li>
+                    <a id="seventh" class="bottom" onclick="window.location.href = 'loading.html'; localStorage.setItem('page','festivalinfo/kadayawan.html');">Kadayawan Festival</a>
+                </li>
+            </div>
+            
+        </ul>
+    </div>
+    
+    
+    <div id="footerplace" style="position: absolute; width: 100%;"></div>
+    
+    <audio id="audio" src="festyvoicelines/home.mp3" autoplay="true" muted="true">
+    <script>
+        window.onload = function playbeginning() {
+            var audio = document.getElementById("audio");
+            audio.muted = false;
+            audio.src = 'festyvoicelines/home.mp3';
+            audio.play();
+        }
+        function myFunction() {
+            var input = document.getElementById("myInput");
+            var filter = input.value.toUpperCase();
+            var ul = document.getElementById("List");
+            var li = ul.getElementsByTagName("li");
+            var a; 
+            var i;
+            var txtValue;
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+        
+        function inputClicked() {
+            document.getElementById("myInput").placeholder = "Search for anything..."
+        }
+    </script>
+    
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+    <script src="account.js"></script>
+</body>
+</html>

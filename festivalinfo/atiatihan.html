@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ati - Atihan | FILNESTA</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jockey+One" />
+    <link href='https://fonts.googleapis.com/css?family=Jockey One' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="structure.css">
+    <link rel="stylesheet" type="text/css" href="pagetransition.css">
+    
+    <style>
+        body {
+            background: url('bg1.jpg');
+        }
+
+        .title::before {
+            background-image: url("atiatihanlogo.png");
+        }
+        
+        
+        .title::after {
+            background-image: url("RightArrow.png");
+        }
+    </style>
+</head>
+<body onload="getaccount()">
+    <div id="headerplace"></div>
+    
+    <div class="box">
+        <div class="title" onclick="window.location.href = 'masskara.html'" title="Go to MassKara festival?">Ati-Atihan Festival</div>
+        <div class="container">
+            <div class="info">
+                <img src="ATI-ATIHAN.jpg" alt="Dummy Image" id="festimg">
+                <div id="realinfo">
+                    <p>
+                        <div class="heading">Meaning:</div><br>
+                        Ati-Atihan Festival meaning is “to be like Atis or Aetas (Aklan Province's natives).” Similar to Cebu's Sinulog Festival, and Iloilo's Dinagyang Festival this event is celebrated to honor the Child Jesus, Santo Niño. The Aklan Festival celebration consists of multiple events that happen in various parts of Kalibo town.
+                    </p>
+                    
+                    <p>
+                        <div class="heading">Origin:</div><br>
+                        The festivity was originally a pagan celebration to commemorate the Barter of Panay, where the Aeta accepted gifts from Bornean chieftains called Datu, who fled with their families to escape a tyrannical ruler, in exchange for being allowed to dwell in the Aeta's lands. And secondly to commemorate a peace pact between two warring tribes back in 1210.
+                    </p>
+                    
+                    <p>
+                        <div class="heading">What to expect:</div><br>
+                        Because of the pandemic, the usual celebration of the Ati-Atihan Festival tagalog was done digitally. There were no public gatherings, Ati-Atihan Festival street dances, and other activities that require close contacts to follow the health and safety protocols. The local government didn't let the pandemic ruin the Ati Atihan mood so they celebrated the yearly festival in Aklan virtually. You can watch the virtual Ati-atihan Festival tagalog here.
+                    </p>
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="footerplace" style="position: absolute; width: 100%;"></div>
+
+    <script src="footer.js"></script>
+    <script src="account.js"></script>
+    <script src="header.js"></script>
+    <script>
+        function OME() {
+            const div = document.getElementById("formdiv");
+            div.animate([
+            {
+                transform: 'rotateX(0px) translateX(-50%) translateY(0px)'
+            },
+            {
+                transform: 'rotateX(30px) translateX(-50%) translateY(0px)'
+            }
+            ],
+            {
+                duration: 500
+            }
+            )
+            const onMouseEnter = setTimeout(OMEUse, 450);
+            function OMEUse() {
+                div.style.transform = 'rotateX(30px)';
+            }
+        }
+        
+        function OML() {
+            const div = document.getElementById("formdiv");
+            div.animate([
+            {
+                transform: 'rotateX(30px) translateX(-50%) translateY(0)'
+            },
+            {
+                transform: 'rotateX(30px) translateX(-50%) translateY(0)'
+            }
+            ],
+            {
+                duration: 500
+            }
+            )
+            const onMouseEnter = setTimeout(OMEUse, 450);
+            function OMEUse() {
+                div.style.transform = 'rotateX(0px)';
+            }
+        }
+    </script>
+</body>
+</html>

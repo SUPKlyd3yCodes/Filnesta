@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MassKara | FILNESTA</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jockey+One" />
+    <link href='https://fonts.googleapis.com/css?family=Jockey One' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="structure.css">
+    <link rel="stylesheet" type="text/css" href="pagetransition.css">
+    
+    <style>
+        body {
+            background: url('bg5.jpg');
+        }
+        
+        .title::before {
+            background-image: url("masskaralogo.png");
+        }
+        
+        
+        .title::after {
+            background-image: url("RightArrow.png");
+        }
+    </style>
+</head>
+<body onload="getaccount()">
+    <div id="headerplace"></div>
+    
+    <div class="box">
+        <div class="title" onclick="window.location.href = 'sinulog.html'" title="Go to Sinulog festival?">MassKara Festival</div>
+        <div class="container">
+            <div class="info">
+                <img src="MASSKARA.jpg" alt="Dummy Image" id="festimg">
+                <div id="realinfo">
+                    <p>
+                        <div class="heading">Meaning:</div><br>
+                        The Masskara Festival is usually celebrated October 1-20 in Bacolod City, Philippines. The term Masskara is created from two words: mass, meaning crowd, and the Spanish word cara, for face; thus the double meaning for "mask" and "many faces".
+                        
+                        
+                        
+                    </p>
+                    <p>
+                        <div class="heading">Origin:</div><br>
+                        There are two tragic and unfortunate events that led to the birth of the MassKara festival. It began in the year 1980 when one of the top sources of income of the province, which is sugar cane, had a crisis regarding price. It had been consistently low for the past months so much so that it affected the way of living and the economy of the province as a whole. This began due to the introduction of the other substitute for sugar brought by the Americans, the high fructose corn syrup. Indeed, the total effect of this economic crisis was felt by all people in the province regardless of which walks of life they came from.<br><br>
+                        
+                        The second event was the accident of the MV Don Juan vessel coming from Manila going to Bacolod. The ship collided with another boat, and that caused the sinking of the ship which happens to carry a lot of Negrenses, with approximately 750 casualties including the different prominent families of the City of Bacolod. It was an event that the left a scar on the people of Bacolod because, in an instant, people they love and care about were taken from them.<br><br>
+                        
+                        Amidst the tragedies that the province was facing, the government leaders headed by late Mayor Jose Montalvo came up with the idea of organizing the Masskara Festival which stands for the “City of Smiles.” This served as a light of hope to the entire province despite the tragedies. They hoped and believed that no matter what crisis or disaster they will face, all will be well for as long as they have the smiles rooted in profound hope and faith.
+                        
+                    </p>
+                    <p>
+                        <div class="heading">What to expect:</div><br>
+                        Major activities include the MassKara Queen beauty pageant, carnivals, drum, bugle corps competitions, food festivals, sports events, musical concerts, agriculture-trade fairs, garden shows, and other special events organized every year.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="footerplace" style="position: absolute; width: 100%;"></div>
+
+    <script src="footer.js"></script>
+    <script src="account.js"></script>
+    <script src="header.js"></script>
+    <script>
+        function OME() {
+            const div = document.getElementById("formdiv");
+            div.animate([
+            {
+                transform: 'rotateX(0px) translateX(-50%) translateY(0px)'
+            },
+            {
+                transform: 'rotateX(30px) translateX(-50%) translateY(0px)'
+            }
+            ],
+            {
+                duration: 500
+            }
+            )
+            const onMouseEnter = setTimeout(OMEUse, 450);
+            function OMEUse() {
+                div.style.transform = 'rotateX(30px)';
+            }
+        }
+        
+        function OML() {
+            const div = document.getElementById("formdiv");
+            div.animate([
+            {
+                transform: 'rotateX(30px) translateX(-50%) translateY(0)'
+            },
+            {
+                transform: 'rotateX(30px) translateX(-50%) translateY(0)'
+            }
+            ],
+            {
+                duration: 500
+            }
+            )
+            const onMouseEnter = setTimeout(OMEUse, 450);
+            function OMEUse() {
+                div.style.transform = 'rotateX(0px)';
+            }
+        }
+    </script>
+</body>
+</html>

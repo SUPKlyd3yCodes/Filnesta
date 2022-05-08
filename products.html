@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Products | FILNESTA</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jockey+One" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Jockey One' rel='stylesheet'>
+  <link rel="stylesheet" type="text/css" href="structure.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <style>
+    body {
+      overflow-x: hidden;
+      margin: 0%;
+      font-family: "Jockey One";
+      background-image: url('productbg.jpg');
+      background-size: 100%;
+    }
+    
+    a:link {
+      background-color: transparent;
+      text-decoration: none;
+    }
+    
+    .header {
+      border: 0px;
+    }
+    
+    #List {
+      list-style-type: none;
+      padding: 10px;
+      margin: 0;
+      border-radius: 20px;
+      display:inline; 
+    }
+    
+    #List li {
+      display: inline;
+    }
+    
+    #List li a {
+      border: 1px solid #ddd;
+      background-color: #f6f6f6;
+      padding: 15px;
+      text-decoration: none;
+      font-size: 18px;
+      color: black;
+      display: inline-block;
+      border-radius: 100%;
+      width: 220px;
+      height: 220px;
+      text-align: center;
+      box-shadow: 
+      rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+    
+    @media only screen and (max-width: 1100px) {
+      #List li a {
+        border: 1px solid #ddd;
+        background-color: #f6f6f6;
+        padding: 15px;
+        text-decoration: none;
+        font-size: 18px;
+        color: black;
+        display: inline-block;
+        border-radius: 100%;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+      }
+    }
+    
+    @media only screen and (max-width: 900px) {
+      #List li a {
+        border: 1px solid #ddd;
+        background-color: #f6f6f6;
+        padding: 15px;
+        text-decoration: none;
+        font-size: 18px;
+        color: black;
+        display: inline-block;
+        border-radius: 100%;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+      }
+    }
+    
+    img {
+      width: 200px;
+      height: 200px;
+    }
+    
+    .producttype {
+      background-color: white;
+      width: 100px;
+      border: 0px solid black;
+      border-radius: 4px;
+      margin: 5px;
+    }
+    
+    .content {
+      width: 90%;
+      background-color: #b8d8d8;
+      opacity: 95%;
+      margin: 200px auto;
+      border-radius: 10px;
+      box-shadow: 
+      rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+    
+    .header {
+      height: 140px;
+    }
+    
+    #accountnamep {
+      margin-top: 20px;
+    }
+    
+    
+    @keyframes topA {
+      0% {
+        transform: translateX(210%) translateY(90%);
+      }
+      100% {
+        transform: translateX(0%) translateY(0%);
+      }
+    }
+    
+    @keyframes topB {
+      0% {
+        transform: translateX(70%) translateY(90%);
+      }
+      100% {
+        transform: translateX(0%) translateY(0%);
+      }
+    }
+    
+    @keyframes topC {
+      0% {
+        transform: translateX(-70%) translateY(90%);
+      }
+      100% {
+        transform: translateX(0%) translateY(0%);
+      }
+    }
+    
+    @keyframes topD {
+      0% {
+        transform: translateX(-210%) translateY(90%);
+      }
+      100% {
+        transform: translateX(0%) translateY(0%);
+      }
+    }
+    
+    @keyframes bottomA {
+      0% {
+        transform: translateX(170%) translateY(-105%);
+      }
+      100% {
+        transform: translateX(0%) translateY(0%);
+      }
+    }
+    
+    @keyframes bottomB {
+      0% {
+        transform: translateX(0%) translateY(-105%);
+      }
+      100% {
+        transform: translateX(0%) translateY(0%);
+      }
+    }
+    
+    @keyframes bottomC {
+      0% {
+        transform: translateX(-170%) translateY(-105%);
+      }
+      100% {
+        transform: translateX(0%) translateY(0%);
+      }
+    }
+    
+    button {
+      border-radius: 20px;
+      border: 0;
+      box-shadow: 
+      rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+  </style>
+</head>
+<body onload="getaccount()">
+  <div id="headerplace"></div>
+  
+  <center>
+    <br><br><br><br><br><br><br>
+    <h1><button id="festivalbutton"><img src="festivalinfo/atiatihanlogo.png" style="width:200px; height:150px;"></button></h1>
+  </br>
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-sm-4"> 
+        <div class="panel panel-primary">
+          <div class="panel-heading">I LOVE AKLAN SHIRT (WHITE)</div>
+          <div class="panel-body"><button onclick="cart('White I Love Aklan Shirt','Shirt')"><img src="productpics//iloveaklanwhite.jpg" style="width:260px; height:300px;"></button></div>
+          <div class="panel-footer">&#8369;200.00</div>
+        </div>
+      </div>
+      
+      
+      <div class="col-sm-4"> 
+        <div class="panel panel-danger">
+          <div class="panel-heading">AKLAN KEYCHAINS</div>
+          <div class="panel-body"><button onclick="cart('Aklan Keychains','Keychains')"><img src="productpics/aklankeychains.jpg" style="width:260px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;150.00</div>
+        </div>
+      </div>
+      
+      <div class="col-sm-4"> 
+        <div class="panel panel-success">
+          <div class="panel-heading">TRADITIONAL AKLAN BAG</div>
+          <div class="panel-body"><button onclick="cart('Traditional Aklan Bag','Bag')"><img src="productpics/aklanbag.webp" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;179.00</div>
+        </div>
+      </div>
+    </div>
+  </div><br>
+  
+  <div class="container">    
+    <div class="row">
+      <div class="col-sm-4"> 
+        <div class="panel panel-primary">
+          <div class="panel-heading">I LOVE AKLAN SHIRT WITH SLEEVES (BLACK)</div>
+          <div class="panel-body"><button onclick="cart('Black I Love Aklan Shirt','Shirt')"><img src="productpics/iloveaklanblack.jpg" style="width: 260px; height: 300px;"></button></div>
+          <div class="panel-footer"> &#8369;200.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-danger">
+          <div class="panel-heading">I LOVE AKLAN FRIDGE MAGNET</div>
+          <div class="panel-body"><button onclick="cart('I Love Aklan Fridge Magnet','Fridge Magnet')"><img src="productpics/iloveaklanmagnet.jpg" style="width: 260px; height: 300px;"></button></div>
+          <div class="panel-footer"> &#8369;230.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-success">
+          <div class="panel-heading">TRADITIONAL AKLAN HAT</div>
+          <div class="panel-body"><button onclick="cart('Traditional Aklan Hat','Hat')"><img src="productpics/aklanhat.jpg" style="width: 300px; height: 300px;"></button></div>
+          <div class="panel-footer"> &#8369;170.00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <h1><button id="festivalbutton"><img src="festivalinfo/masskaralogo.png" style="width:150px; height:150px;"></button></h1>
+  
+  <div class="container">    
+    <div class="row">
+      <div class="col-sm-4"> 
+        <div class="panel panel-primary">
+          <div class="panel-heading">MASSKARA FESTIVAL THEMED SHIRT</div>
+          <div class="panel-body"><button onclick="cart('MassKara Festival Themed Shirt','Shirt')"><img src="productpics/masskarashirt.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;200.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-danger">
+          <div class="panel-heading">DIY MASSKARA MASK</div>
+          <div class="panel-body"><button onclick="cart('DIY MassKara Mask','Mask')"><img src="productpics/masskaradiymask.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;150.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-success">
+          <div class="panel-heading">BACOLOD PLASTIC BAG</div>
+          <div class="panel-body"><button onclick="cart('Bacolod Plastic Bag','Bag')"><img src="productpics/masskarabacolodbag.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;179.00</div>
+        </div>
+      </div>
+    </div>
+  </div><br>
+  
+  <div class="container">    
+    <div class="row">
+      <div class="col-sm-4"> 
+        <div class="panel panel-primary">
+          <div class="panel-heading">MASSKARA THEMED SHIRT (BLACK)</div>
+          <div class="panel-body"><button onclick="cart('Black MassKara Festival Themed Shirt','Shirt')"><img src="productpics/masskarashirtblack.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;200.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-danger">
+          <div class="panel-heading">MASSKARA EYE MASK</div>
+          <div class="panel-body"><button onclick="cart('MassKara Eye Mask','Mask')"><img src="productpics/masskaraeyewear.jfif" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;150.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-success">
+          <div class="panel-heading">MASSKARA FESTIVAL FRIDGE MAGNET</div>
+          <div class="panel-body"><button onclick="cart('MassKara Fridge Magnet','Fridge Magnet')"><img src="productpics/masskarafridgemagnet.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;230.00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <h1><button id="festivalbutton"><img src="festivalinfo/sinuloglogo.png" style="width:200px; height:180px;"></button></h1>
+  <div class="container">    
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">SINULOG FESTIVAL SHIRT</div>
+          <div class="panel-body"><button onclick="cart('Sinulog Festival Shirt','Shirt')"><img src="productpics/sinulogshirt.webp" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;200.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-danger">
+          <div class="panel-heading">SINULOG VIBES FRIDGE MAGNET</div>
+          <div class="panel-body"><button onclick="cart('Sinulog Fridge Magnet','Fridge Magnet')"><img src="productpics/sinulogfridgemagnet.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;230.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-success">
+          <div class="panel-heading">DIY SINULOG MASK</div>
+          <div class="panel-body"><button onclick="cart('DIY Sinulog Mask','Mask')"><img src="productpics/sinulogmask.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;150.00</div>
+        </div>
+      </div>
+    </div>
+  </div><br>
+  
+  <div class="container">    
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">SINULOG FESTIVAL SHIRT (BLACK)</div>
+          <div class="panel-body"><button onclick="cart('Black Sinulog Festival Themed Shirt','Shirt')"><img src="productpics/sinulogshirtblack.jfif" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;200.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-danger">
+          <div class="panel-heading">SINULOG PIT SENOYOR! SHIRT</div>
+          <div class="panel-body"><button onclick="cart('Pit Senoyor Sinulog Festival Shirt','Shirt')"><img src="productpics/sinulogpitsenor.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;200.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-success">
+          <div class="panel-heading">SINULOG I-SHAGIT UG KUSOG FACE MASK</div>
+          <div class="panel-body"><button onclick="cart('Sinulog I-Shagit Ug Kusog Face Mask','Mask')"><img src="productpics/sinulogmask.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;150.00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <h1><button id="festivalbutton"><img src="festivalinfo/dinagyanglogo.png" style="width:150px; height:130px;"></button></h1>
+  <div class="container">    
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">DINAGYANG FESTIVAL SHIRT (BLACK)</div>
+          <div class="panel-body"><button onclick="cart('Dinagyang Festival Shirt','Shirt')"><img src="productpics/dinagyangshirtblack.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;200.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-danger">
+          <div class="panel-heading">DINAGYANG FRIDGE MAGNET</div>
+          <div class="panel-body"><button onclick="cart('Dinagyang Fridge Magnet','Fridge Magnet')"><img src="productpics/dinagyangfridgemagnet.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;230.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-success">
+          <div class="panel-heading">TRADITIONAL DINAGYANG MASK</div>
+          <div class="panel-body"><button onclick="cart('Traditional Dinagyang Mask','Mask')"><img src="productpics/dinagyangmask.png" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;150.00</div>
+        </div>
+      </div>
+    </div>
+  </div><br>
+  
+  <div class="container">    
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">DINAGYANG FESTIVAL SHIRT (BLUE)</div>
+          <div class="panel-body"><button onclick="cart('Blue Dinagyang Festival Shirt','Shirt')"><img src="productpics/dinagyangblueshirt.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;200.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-danger">
+          <div class="panel-heading">DINAGYANG FESTIVAL BAG</div>
+          <div class="panel-body"><button onclick="cart('Dinagyang Festival Bag','Bag')"><img src="productpics/dinagyangbag.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;179.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-success">
+          <div class="panel-heading">DIY DINAGYANG FESTIVAL COSTUME</div>
+          <div class="panel-body"><button onclick="cart('DIY Dinagyang Festival Costume','Costume')"><img src="productpics/dinagyangcostume.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;350.00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1><button id="festivalbutton"><img src="festivalinfo/pahiyaslogo.webp" style="width:200px; height:150px;"></button></h1>
+  <div class="container">    
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">PAHIYAS FESTIVAL SHIRT (WHITE)</div>
+          <div class="panel-body"><button onclick="cart('Pahiyas Festival Shirt','Shirt')"><img src="productpics/pahiyaswhiteshirt.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;200.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-danger">
+          <div class="panel-heading">PAHIYAS FRIDGE MAGNET</div>
+          <div class="panel-body"><button onclick="cart('Pahiyas Fridge Magnet','Fridge Magnet')"><img src="productpics/pahiyasfridgemagnet.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;230.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-success">
+          <div class="panel-heading">TRADITIONAL PAHIYAS FESTIVAL MASK</div>
+          <div class="panel-body"><button onclick="cart('Traditional Pahiyas Mask','Mask')"><img src="productpics/pahiyasmask.jpg" style="width:240px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;150.00</div>
+        </div>
+      </div>
+    </div>
+  </div><br>
+  
+  <div class="container">    
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">DIY PAHIYAS FESTIVAL MASK</div>
+          <div class="panel-body"><button onclick="cart('DIY Pahiyas Festival Mask','Mask')"><img src="productpics/pahiyasdiymask.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;200.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-danger">
+          <div class="panel-heading">PAHIYAS FESTIVAL SHIRT (NAVY)</div>
+          <div class="panel-body"><button onclick="cart('Navy Pahiyas Festival Shirt','Shirt')"><img src="productpics/pahiyasnavyshirt.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;179.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-success">
+          <div class="panel-heading">PAHIYAS BAG</div>
+          <div class="panel-body"><button onclick="cart('Pahiyas Bag','Bag')"><img src="productpics/pahiyasbag.jpg" style="width:240px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;179.00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <h1><button id="festivalbutton"><img src="festivalinfo/panagbengalogo.png" style="width:150px; height:150px;"></button></h1>
+  <div class="container">    
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">PANAGBENGA FESTIVAL THEMED SHIRT (BLACK)</div>
+          <div class="panel-body"><button onclick="cart('Black Panagbenga Festival Themed Shirt','Shirt')"><img src="productpics/panagbengashirtblack.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;200.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-danger">
+          <div class="panel-heading">BAGUIO FRIDGE MAGNET</div>
+          <div class="panel-body"><button onclick="cart('Baguio Fridge Magnet','Fridge Magnet')"><img src="productpics/panagbengafridgemagnet.webp" style="width:320px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;230.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-success">
+          <div class="panel-heading">TRADITIONAL PANAGBENGA FESTIVAL MASK</div>
+          <div class="panel-body"><button onclick="cart('Traditional Panagbenga Festival Mask','Mask')"><img src="productpics/panagbengamask.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;150.00</div>
+        </div>
+      </div>
+    </div>
+  </div><br>
+  
+  <div class="container">    
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">PANAGBENGA FESTIVAL THEMED SHIRT (PINK)</div>
+          <div class="panel-body"><button onclick="cart('Pink Panagbenga Festival Themed Shirt','Shirt')"><img src="productpics/panagbengashirtpink.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;200.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-danger">
+          <div class="panel-heading">TRADITIONAL BAGUIO BAG</div>
+          <div class="panel-body"><button onclick="cart('Traditional Baguio Bag','Bag')"><img src="productpics/panagbengabag.jfif" style="width:320px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;179.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-success">
+          <div class="panel-heading">TRADITIONAL PANAGBENGA MASK</div>
+          <div class="panel-body"><button onclick="cart('Traditional Panagbenga Mask','Mask')"><img src="productpics/panagbengamask.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;150.00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <h1><button id="festivalbutton"><img src="festivalinfo/kadayawanlogo.png" style="width:200px; height:100px;"></button></h1>
+  <div class="container">    
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">KADAYAWAN FESTIVAL SHIRT</div>
+          <div class="panel-body"><button onclick="cart('Kadayawan Festival Shirt','Shirt')"><img src="productpics/kadayawanshirt.jpg" style="width:280px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;200.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-danger">
+          <div class="panel-heading">DAVAO FRIDGE MAGNET</div>
+          <div class="panel-body"><button onclick="cart('Davao Fridge Magnet','Fridge Magnet')"><img src="productpics/kadayawanfridgemagnet.webp" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;230.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-success">
+          <div class="panel-heading">DIY TRADITIONAL KADAYAWAN MASK</div>
+          <div class="panel-body"><button onclick="cart('DIY Traditional Kadayawan Mask','Mask')"><img src="productpics/kadayawanmask1.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;150.00</div>
+        </div>
+      </div>
+    </div>
+  </div><br>
+  
+  <div class="container">    
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">KADAYAWAN: THE KING OF FESTIVALS SHIRT</div>
+          <div class="panel-body"><button onclick="cart('Kadayawan: The King Of Festivals Shirt','Shirt')"><img src="productpics/kadayawankingshirt.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;200.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-danger">
+          <div class="panel-heading">TRADITIONAL DAVAO BAG</div>
+          <div class="panel-body"><button onclick="cart('Traditional Davao Bag','Bag')"><img src="productpics/kadayawanbag.jfif" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;179.00</div>
+        </div>
+      </div>
+      <div class="col-sm-4"> 
+        <div class="panel panel-success">
+          <div class="panel-heading">TRADITIONAL KADAYAWAN MASK</div>
+          <div class="panel-body"><button onclick="cart('Traditional Kadayawan Mask','Mask')"><img src="productpics/kadayawanmask2.jpg" style="width:300px; height:300px;"></button></div>
+          <div class="panel-footer"> &#8369;150.00</div>
+        </div>
+      </div>
+    </div>
+  </div><br><br>
+  
+</b>
+</center>
+
+<div id="footerplace" style="position: absolute; width: 100%;"></div>
+<script>
+  function cart(name,type) {
+    if (window.confirm(name+" with type: "+type+" is added to cart")) {
+      let count2 = 0;
+      
+      var tocart = {
+        name: name,
+        type: type
+      };
+      console.log(tocart)
+      var cart = JSON.parse(localStorage.getItem("cart"));
+      for (const key in cart) {
+        count2++;
+      }
+      console.log(count2);
+      
+      
+      var naming = "tocart"+count2.toString();
+      cart[naming] = tocart;
+      console.log(cart);
+      
+      var json = JSON.stringify(cart);
+      localStorage.setItem("cart", json);
+    }
+  }
+</script>
+
+<script src="footer.js"></script>
+<script src="account.js"></script>
+<script src="header.js"></script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | FILNESTA</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jockey+One" />
+    <link href='https://fonts.googleapis.com/css?family=Jockey One' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="structure.css">
+    <link rel="stylesheet" type="text/css" href="pagetransition.css">
+    
+    <style>
+        body {
+            overflow-x: hidden;
+            margin: 0%;
+            font-family: "Jockey One";
+            background-color: beige;
+        }
+        
+        img {
+            width: 200px;
+            height: 200px;
+        }
+        
+        .content {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            padding: 30px;;
+            height: 700px;
+            background-color: blanchedalmond;
+            opacity: 95%;
+            margin: 140px auto;
+            border-radius: 10px;
+        }
+        
+        
+        #trendingtitle {
+            width: 33%;
+            font-size: 200%; 
+            text-transform: uppercase;
+            margin-left: 20px;
+            background-color: #bbaaad;
+            border-radius: 20px 0px 0px 20px;
+            text-indent: 10px;
+            position: absolute;
+            height: 45px;
+        }
+        
+        #trendingtitle::after {
+            z-index: -1;
+            content:"";
+            position: absolute;
+            background: inherit;
+            width: 30px;
+            height: 30px;
+            transform: rotateZ(45deg);
+            top: 7px;
+            left: calc(100% - 15px);
+        }
+        
+        @keyframes goUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0%;
+            }
+            100% {
+                transform: translateY(0px);
+                opacity: 100%;
+            }
+        }
+    </style>
+</head>
+<body onload="getaccount()">
+    <div id="headerplace"></div>
+    
+    <div class="content">
+        <div>
+            
+            <div id="trendingtitle">Your Cart</div>
+            <div id="placehere" style="margin-top: 100px; overflow-y: scroll; height: 500px; font-size: 20px;"></div>
+            <div> 
+                <button onclick="buy()" style="width: 150px; height: 75px; background-color: rgb(174, 143, 105); border: 0px; border-radius: 10px; font-size: large;">Buy All?</button> 
+                <button onclick="cancel()" style="width: 150px; height: 75px; background-color: rgb(174, 143, 105); border: 0px; border-radius: 10px; font-size: large;">Cancel All?</button> 
+            </div>
+        </div>
+        <div style="margin-top: 10px;">
+        </div>
+        
+        <div style="display: flex; justify-content: center;">
+            
+        </div>
+    </div>
+    
+    <div id="footerplace"></div>
+    
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+    <script src="account.js"></script>
+    <script>
+        function cart() {
+            document.getElementById("placehere").innerHTML = "";
+            var products = JSON.parse(localStorage.getItem("cart"));
+            
+            
+            let val = 0;
+            let price = 0;
+            for (const key in products) {
+                for (const key2 in products[key]) {
+                    
+                    console.log(`${key2}: ${products[key][key2]}`);
+                    if (`${key2}` != "type") {
+                    const here = document.getElementById("placehere");
+                        var div = document.createElement('div');
+                        div.id = 'container';
+                        div.innerHTML = `${key2}: ${products[key][key2]}`;
+                        here.appendChild(div);
+                    } else {
+                        let type = `${products[key][key2]}`
+                        const here = document.getElementById("placehere");
+                        switch(type) {
+                            case 'Shirt':
+                            price += 200;
+
+                            var div = document.createElement('div');
+                            div.id = 'container';
+                            div.innerHTML = `₱`+200;
+                            here.appendChild(div);
+                            break;
+
+                            case 'Bag':
+                            price += 179;
+                            
+                            var div = document.createElement('div');
+                            div.id = 'container';
+                            div.innerHTML = `₱`+179;
+                            here.appendChild(div);
+                            break;
+
+                            case 'Mask':
+                            price += 150;
+                            
+                            var div = document.createElement('div');
+                            div.id = 'container';
+                            div.innerHTML = `₱`+150;
+                            here.appendChild(div);
+                            break;
+
+                            case 'Costume':
+                            price += 350;
+                            
+                            var div = document.createElement('div');
+                            div.id = 'container';
+                            div.innerHTML = `₱`+350;
+                            here.appendChild(div);
+                            break;
+
+                            case 'Hat':
+                            price += 170;
+                            
+                            var div = document.createElement('div');
+                            div.id = 'container';
+                            div.innerHTML = `₱`+170;
+                            here.appendChild(div);
+                            break;
+
+                            case 'Fridge Magnet':
+                            price += 230;
+                            
+                            var div = document.createElement('div');
+                            div.id = 'container';
+                            div.innerHTML = `₱`+230;
+                            here.appendChild(div);
+                            break;
+
+                            case 'Keychains':
+                            price += 150;
+                            
+                            var div = document.createElement('div');
+                            div.id = 'container';
+                            div.innerHTML = `₱`+150;
+                            here.appendChild(div);
+                            break;
+                        }
+                        
+                        
+                        val += price;
+                        price = 0;
+                        console.log(val);
+                        var div = document.createElement('div');
+                        div.id = 'container';
+                        div.innerHTML = `${key2}: ${products[key][key2]}`;
+                        div.className = 'border pad';
+                        
+                        var br = document.createElement("br");
+                        here.appendChild(div);
+                        here.appendChild(br)
+                    }
+                    
+                }
+            }
+        }
+        cart()
+        function buy() {
+            function loc() {
+                let location = window.prompt("Where are you located?");
+                
+                if (loc === "") {
+                    window.alert("No Location Inputted");
+                    loc()
+                } else {
+                    
+                    return location;
+                }
+            }
+            
+            
+            
+            
+            var products = JSON.parse(localStorage.getItem("cart"));
+            
+            
+            let val = 0;
+            let price = 0;
+            function value() {
+                for (const key in products) {
+                    for (const key2 in products[key]) {
+                        
+                        console.log(`${key2}: ${products[key][key2]}`);
+                        if (`${key2}` == "type") {
+                            let type = `${products[key][key2]}`
+                            switch(type) {
+                                case 'Shirt':
+                                price += 200;
+                                break;
+                                case 'Bag':
+                                price += 179;
+                                break;
+                                case 'Mask':
+                                price += 150;
+                                break;
+                                case 'Costume':
+                                price += 350;
+                                break;
+                                case 'Hat':
+                                price += 170;
+                                break;
+                                case 'Fridge Magnet':
+                                price += 230;
+                                break;
+                            }
+                            
+                            
+                            val += price;
+                            price = 0;
+                        }
+                    }
+                }
+                return val;
+            }
+            
+            function confirmation() {
+                if (window.confirm("you"+" bought ₱ "+val+". Arrival to your location: "+loc()+" is estimated between Friday. Apr. 29 and Mon. May. 16")) {
+                    localStorage.setItem("cart", "{}");
+                    location.reload();
+                }
+                
+            }
+            
+            value()
+            confirmation()
+            
+            /*if () {
+                document.getElementById("placehere").innerHTML = "";
+            }*/
+        }
+        
+        function cancel() {
+            if (window.confirm("Are you sure?")) {
+                localStorage.setItem("cart", "{}");
+                location.reload();
+            }
+            
+        }
+        
+    </script>
+</body>
+</html>

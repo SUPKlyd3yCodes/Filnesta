@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pahiyas | FILNESTA</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jockey+One" />
+    <link href='https://fonts.googleapis.com/css?family=Jockey One' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="structure.css">
+    <link rel="stylesheet" type="text/css" href="pagetransition.css">
+    
+    <style>
+        body {
+            background: url('bg2.jpg');
+        }
+
+        .title::before {
+            background-image: url("pahiyaslogo.webp");
+        }
+        
+        
+        .title::after {
+            background-image: url("RightArrow.png");
+        }
+    </style>
+</head>
+<body onload="getaccount()">
+    <div id="headerplace"></div>
+    
+    <div class="box">
+        <div class="title" onclick="window.location.href = 'panagbenga.html'" title="Go to Panagbenga festival?">Pahiyas Festival</div>
+        <div class="container">
+            <div class="info">
+                <img src="PAHIYAS.jpg" alt="Dummy Image" id="festimg">
+                <div id="realinfo">
+                    <p>
+                        <div class="heading">Meaning:</div><br>
+                        The Pahiyas Festival is celebrated to give thanks to the patron saint of farmers, San Isidro Labrador for their bountiful harvest. During this occasion every May 15, the houses transform into colorful abodes using their harvests and the popular kipings. The Pahiyas Festival meaning is really to give thanks.
+                        
+                        
+                        
+                    </p>
+                    <p>
+                        <div class="heading">Origin:</div><br>
+                        The word 'pahiyas' was derived from the word 'payas', which means decoration or to decorate. The reason behind such practice dates back to the 15th century, when farmers used to offer their harvests at the foot of Mount Banahaw.
+                        
+                    </p>
+                    <p>
+                        <div class="heading">What to expect:</div><br>
+                        1. Witness a colorful transformation<br>
+                        2. Attend a solemn yet colorful mass<br>
+                        3. Join a grand procession<br>
+                        4. Enter Pahiyas-decorated homes<br>
+                        5. Shop for local goods<br>
+                        6. Watch a grand parade<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="footerplace" style="position: absolute; width: 100%;"></div>
+
+    <script src="footer.js"></script>
+    <script src="account.js"></script>
+    <script src="header.js"></script>
+    <script>
+        function OME() {
+            const div = document.getElementById("formdiv");
+            div.animate([
+            {
+                transform: 'rotateX(0px) translateX(-50%) translateY(0px)'
+            },
+            {
+                transform: 'rotateX(30px) translateX(-50%) translateY(0px)'
+            }
+            ],
+            {
+                duration: 500
+            }
+            )
+            const onMouseEnter = setTimeout(OMEUse, 450);
+            function OMEUse() {
+                div.style.transform = 'rotateX(30px)';
+            }
+        }
+        
+        function OML() {
+            const div = document.getElementById("formdiv");
+            div.animate([
+            {
+                transform: 'rotateX(30px) translateX(-50%) translateY(0)'
+            },
+            {
+                transform: 'rotateX(30px) translateX(-50%) translateY(0)'
+            }
+            ],
+            {
+                duration: 500
+            }
+            )
+            const onMouseEnter = setTimeout(OMEUse, 450);
+            function OMEUse() {
+                div.style.transform = 'rotateX(0px)';
+            }
+        }
+    </script>
+</body>
+</html>

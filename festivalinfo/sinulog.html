@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinulog | FILNESTA</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jockey+One" />
+    <link href='https://fonts.googleapis.com/css?family=Jockey One' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="structure.css">
+    <link rel="stylesheet" type="text/css" href="pagetransition.css">
+    
+    <style>
+        body {
+            background: url('bg1.jpg');
+        }
+        
+        .title::before {
+            background-image: url("sinuloglogo.png");
+        }
+        
+        
+        .title::after {
+            background-image: url("RightArrow.png");
+        }
+    </style>
+</head>
+<body onload="getaccount()">
+    <div id="headerplace"></div>
+    
+    <div class="box">
+        <div class="title" onclick="window.location.href = 'dinagyang.html'" title="Go to Dinagyang festival?">Sinulog Festival</div>
+        <div class="container">
+            <div class="info">
+                <img src="SINULOG.jpg" alt="Dummy Image" id="festimg">
+                <div id="realinfo">
+                    <p>
+                        <div class="heading">Meaning:</div><br>
+                        The word “Sinulog” means “graceful dance”, wherein it all started in 1980 with a simple dance that represents the “sulog” (or current) of a river in Cebu. With the celebration's evolution, the Sinulog Festival has become a month long tradition in Cebu.
+                        
+                    </p>
+                    <p>
+                        <div class="heading">Origin:</div><br>
+                        The Sinulog Festival is a festival originating in Cebu City in the Philippines, celebrating the Cebuanos' conversion to Roman Catholicism; it is held on the third Sunday of January and honors the Santo Niňo— the Santo Niňo de Cebú—or Holy Child Jesus.
+                        
+                    </p>
+                    <p>
+                        <div class="heading">What to expect:</div><br>
+                        The festival now, not only consists of costumes and dances, but also contests, such as art exhibits, beauty pageants, photo contests, and singing and dancing contests. Participants may also join the festival's activities, such as concerts, cultural shows, fireworks display, fun runs, and street fairs.<br><br>
+                        
+                        The dancers are dressed in bright colored costumes doing the Sinulog dance to the rhythm of drums, gongs, trumpets and other band instruments.
+                        
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="footerplace" style="position: absolute; width: 100%;"></div>
+
+    <script src="footer.js"></script>
+    <script src="account.js"></script>
+    <script src="header.js"></script>
+    <script>
+        function OME() {
+            const div = document.getElementById("formdiv");
+            div.animate([
+            {
+                transform: 'rotateX(0px) translateX(-50%) translateY(0px)'
+            },
+            {
+                transform: 'rotateX(30px) translateX(-50%) translateY(0px)'
+            }
+            ],
+            {
+                duration: 500
+            }
+            )
+            const onMouseEnter = setTimeout(OMEUse, 450);
+            function OMEUse() {
+                div.style.transform = 'rotateX(30px)';
+            }
+        }
+        
+        function OML() {
+            const div = document.getElementById("formdiv");
+            div.animate([
+            {
+                transform: 'rotateX(30px) translateX(-50%) translateY(0)'
+            },
+            {
+                transform: 'rotateX(30px) translateX(-50%) translateY(0)'
+            }
+            ],
+            {
+                duration: 500
+            }
+            )
+            const onMouseEnter = setTimeout(OMEUse, 450);
+            function OMEUse() {
+                div.style.transform = 'rotateX(0px)';
+            }
+        }
+    </script>
+</body>
+</html>

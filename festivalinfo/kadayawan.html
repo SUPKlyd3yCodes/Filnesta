@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadayawan | FILNESTA</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jockey+One" />
+    <link href='https://fonts.googleapis.com/css?family=Jockey One' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="structure.css">
+    <link rel="stylesheet" type="text/css" href="pagetransition.css">
+    
+    <style>
+        body {
+            background: url('bg2.jpg');
+        }
+        
+        .title::before {
+            background-image: url("kadayawanlogo.png");
+            background-size: 90% 90%;
+            background-position: center;
+        }
+        
+        
+        .title::after {
+            background-image: url("RightArrow.png");
+        }
+    </style>
+</head>
+<body onload="getaccount()">
+    <div id="headerplace"></div>
+    
+    <div class="box">
+        <div class="title" onclick="window.location.href = 'atiatihan.html'" title="Go to Ati-Atihan festival?">Kadayawan Festival</div>
+        <div class="container">
+            <div class="info">
+                <img src="KADAYAWAN.jpg" alt="Dummy Image" id="festimg">
+                <div  id="realinfo">
+                    <p>
+                        <div class="heading">Meaning:</div><br>
+                        The Kadayawan is an annual festival in Davao City, Philippines. Its “Kadayawan” name derives from the friendly Dabawenyo greeting “Madayaw”, meaning good, valuable, superior or beautiful. Hence, the Kadayawan Festival in Tagalog means “pasasalamat at pagpapahalaga”. Kadayawan is a celebration of life, a thanksgiving for nature's gifts, the wealth of culture, the bounties of harvest, and serenity.
+                    </p>
+                    <p>
+                        <div class="heading">Origin:</div><br>
+                        The famous Kadayawan Festival originated from Davao. Interestingly, the festival's concept came from the pagan beliefs of Davao's ethnic tribes. Back then, ethnic tribes would gather at the foot of Mt. Apo, the Philippines' highest mountain.
+                        
+                    </p>
+                    <p>
+                        <div class="heading">What to expect:</div><br>
+                        With nature as its theme and the local tribes as part of the highlight of the event, this once-a-year occasion is replete with lively performances of competitive dancing, a colorful display of art, costumes, and plants, and the showcase of products that are endemic in Davao City.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div id="footerplace" style="position: absolute; width: 100%;"></div>
+
+    <script src="footer.js"></script>
+    <script src="account.js"></script>
+    <script src="header.js"></script>
+    <script>
+        function OME() {
+            const div = document.getElementById("formdiv");
+            div.animate([
+            {
+                transform: 'rotateX(0px) translateX(-50%) translateY(0px)'
+            },
+            {
+                transform: 'rotateX(30px) translateX(-50%) translateY(0px)'
+            }
+            ],
+            {
+                duration: 500
+            }
+            )
+            const onMouseEnter = setTimeout(OMEUse, 450);
+            function OMEUse() {
+                div.style.transform = 'rotateX(30px)';
+            }
+        }
+        
+        function OML() {
+            const div = document.getElementById("formdiv");
+            div.animate([
+            {
+                transform: 'rotateX(30px) translateX(-50%) translateY(0)'
+            },
+            {
+                transform: 'rotateX(30px) translateX(-50%) translateY(0)'
+            }
+            ],
+            {
+                duration: 500
+            }
+            )
+            const onMouseEnter = setTimeout(OMEUse, 450);
+            function OMEUse() {
+                div.style.transform = 'rotateX(0px)';
+            }
+        }
+    </script>
+</body>
+</html>
