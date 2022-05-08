@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queen of Sinulog | FILNESTA</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jockey+One" />
+    <link href='https://fonts.googleapis.com/css?family=Jockey One' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="structure.css">
+    <link rel="stylesheet" type="text/css" href="pagetransition.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <style>
+        body {
+            overflow-x: hidden;
+            margin: 0%;
+            font-family: "Jockey One";
+            background-color: beige;
+        }
+        
+        .header {
+            border: 0px;
+        }
+        
+        #List {
+            list-style-type: none;
+            padding: 10px;
+            margin: 0;
+            border-radius: 20px;
+            display:inline; 
+        }
+        
+        #List li {
+            display: inline;
+        }
+        
+        #List li button {
+            border: 1px solid #ddd;
+            background-color: #f6f6f6;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: inline-block;
+            width: 450px;
+            height: 50px;
+            text-align: center;
+            box-shadow: 
+            rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            margin-top: 3px;
+            margin-bottom: 3px;
+            transition: all 1s;
+        }
+        
+        img {
+            width: 200px;
+            height: 200px;
+        }
+        
+        .producttype {
+            background-color: white;
+            width: 100px;
+            border: 0px solid black;
+            border-radius: 4px;
+            margin: 5px;
+        }
+        
+        .contentr {
+            width: 30%;
+            background-color: #b8d8d8;
+            opacity: 95%;
+            margin: 200px auto;
+            float: right;
+            border-radius: 10px;
+            box-shadow: 
+            rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+        
+        #formdiv {
+            height: 100%;
+            border-radius: 50px;
+            background-color: rgb(20, 40, 151);
+            opacity: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 
+            rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, 
+            rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            transition: .5s ease;
+        }
+        
+        #box {
+            opacity: 90%;
+            z-index: 1;
+            position: absolute;
+            margin: 0 auto;
+            margin-top: 9%;
+            width: 50%;
+            height: 75%;
+            left: 30%;
+            transform: translateX(-50%) translateY(3%);
+            animation: goIn 3s ease;
+        }
+        
+        @keyframes goIn {
+            0% {
+                transform: translateX(-160%) translateY(150%) rotateX(30deg) rotateY(180deg) rotateZ(20deg);
+            }
+            100% {
+                transform: translateX(-50%) translateY(3%) rotate(0deg);
+            }
+        }
+        
+        
+        
+        
+        .hoverp {
+            position: absolute;
+            width: calc(100% / 3);
+            height: calc(100% / 3);
+            z-index: 2;
+        }
+        
+        .hoverp:nth-child(1) {
+            top: 0;
+            left: 0;
+        }
+        .hoverp:nth-child(2) {
+            top: 0;
+            right: 0;
+            
+        }
+        .hoverp:nth-child(3) {
+            top: calc(100% / 3);
+            left: 0;
+            
+        }
+        .hoverp:nth-child(4) {
+            top: calc(100% / 3);
+            right: 0;
+            
+        }
+        
+        .hoverp:nth-child(1):hover ~ #formdiv {
+            box-shadow: 15px 15px 50px rgba(0, 0, 0, .3);
+            transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) rotateZ(1deg);
+        }
+        .hoverp:nth-child(2):hover ~ #formdiv {
+            box-shadow: 15px 15px 50px rgba(0, 0, 0, .3);
+            transform: perspective(1000px) rotateX(5deg) rotateY(5deg) rotateZ(-1deg);
+        }
+        .hoverp:nth-child(3):hover ~ #formdiv {
+            box-shadow: 15px 5px 50px rgba(0, 0, 0, .3);
+            transform: perspective(1000px) rotateY(-5deg);
+        }
+        .hoverp:nth-child(4):hover ~ #formdiv {
+            box-shadow: -15px 5px 50px rgba(0, 0, 0, .3);
+            transform: perspective(1000px) rotateY(5deg);
+        }
+    </style>
+</head>
+<body onload="getaccount()">
+    <div id="headerplace"></div>
+    
+    
+    <div class="contentr">
+        
+        <ul id="List">
+            <div style="display: flex; justify-content: space-around; flex-direction: column;">
+                <li>
+                    <button onclick="window.location.href = 'atiatihanqueen.html'" id="first" class="opt" onmouseenter="OME('first')" onmouseleave="OML('first')">Ati-Atihan Festival</button>
+                </liid=>
+                <li>
+                    <button onclick="window.location.href = 'masskaraqueen.html'" id="second" class="opt" onmouseenter="OME('second')" onmouseleave="OML('second')">MassKara Festival</button>
+                </li>
+                <li>
+                    <button onclick="window.location.href = 'sinulogqueen.html'" id="third" class="opt" onmouseenter="OME('third')" onmouseleave="OML('third')">Sinulog Festival</button>
+                </li>
+                <li>
+                    <button onclick="window.location.href = 'dinagyangqueen.html'" id="fourth" class="opt" onmouseenter="OME('fourth')" onmouseleave="OML('fourth')">Dinagyang Festival</button>
+                </li>
+                <li>
+                    <button onclick="window.location.href = 'pahiyasqueen.html'" id="fifth" class="opt" onmouseenter="OME('fifth')" onmouseleave="OML('fifth')">Pahiyas Festival</button>
+                </li>
+                <li>
+                    <button onclick="window.location.href = 'panagbengaqueen.html'" id="sixth" class="opt" onmouseenter="OME('sixth')" onmouseleave="OML('sixth')">Panagbenga Festival</button>
+                </li>
+                <li>
+                    <button onclick="window.location.href = 'kadayawanqueen.html'" id="seventh" class="opt" onmouseenter="OME('seventh')" onmouseleave="OML('seventh')">Kadayawan Festival</button>
+                </li>
+            </div>
+            
+        </ul>
+    </div>
+    
+    
+    
+    <div id="box">
+        <div class="hoverp"></div>
+        <div class="hoverp"></div>
+        <div class="hoverp"></div>
+        <div class="hoverp"></div>
+        <div id="formdiv">
+            <video width="600" height="380" controls>
+                <source src="sinulog.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+    </div>
+    
+    <div id="footerplace" style="position: absolute; width: 100%;"></div>
+    
+    <audio src="../festyvoicelines/sinulog.mp3" autoplay>
+    
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+    <script src="account.js"></script>
+    <script>
+        function OME(num) {
+            const div = document.getElementById(num);
+            div.animate([
+            {
+                transform: 'translateX(0)',
+                width: '450px',
+                marginTop: '3px',
+                marginBottom: '3px'
+            },
+            {
+                transform: 'translateX(-30px)',
+                width: '480px',
+                marginTop: '7px',
+                marginBottom: '7px'
+            }
+            ],
+            {
+                duration: 500
+            }
+            )
+            const onMouseEnter = setTimeout(OMEUse, 450);
+            function OMEUse() {
+                div.style.transform = 'translateX(-30px)';
+                div.style.width = '480px';
+                div.style.marginTop = '7px';
+                div.style.marginBottom = '7px';
+                
+                const others = document.querySelectorAll('.opt:not(#' + CSS.escape(num) + ')');
+                for (var index = 0 ; index < others.length; index++) {
+                    others[index].style.marginTop = '1px';
+                    others[index].style.marginBottom = '1px';
+                }
+            }
+        }
+        
+        function OML(num) {
+            const div = document.getElementById(num);
+            div.animate([
+            {
+                transform: 'translateX(-30px)',
+                width: '480px'
+            },
+            {
+                transform: 'translateX(0)',
+                width: '450px'
+            }
+            ],
+            {
+                duration: 500
+            }
+            )
+            const onMouseEnter = setTimeout(OMEUse, 450);
+            function OMEUse() {
+                div.style.transform = 'translateX(0px)';
+                div.style.width = 'width(450px)';
+                div.style.marginTop = '3px';
+                div.style.marginBottom = '3px';
+                
+                const others = document.querySelectorAll('.opt:not(#' + CSS.escape(num) + ')');
+                for (var index = 0 ; index < others.length; index++) {
+                    others[index].style.marginTop = '3px';
+                    others[index].style.marginBottom = '3px';
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>
